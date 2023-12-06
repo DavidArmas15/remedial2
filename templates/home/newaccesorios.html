@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title %}New Accesorios View {% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <a href="{% url 'home:estadio'%}" class="btn btn-outline-info">Cancel</a>
+        <button type="submit" class="btn btn-outline-success">New Accesorio</button>
+    </form>
+{% endblock content %}

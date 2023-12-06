@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Accesorios View{% endblock title %}
+
+{% block content %} 
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th class="text-center">ID</th>
+            <th class="text-center">name</th>
+            <th class="text-center">last_name</th>
+            <th class="text-center">numero</th>
+            <th class="text-center">posicion</th>
+            <th class="text-center">Equipo</th>
+        </thead>
+        <tbody>
+            {% for jugador in jugadores %}
+                <tr>
+                    <td class="text-center">{{ Jugadores.id }}</td>
+                    <td class="text-center">{{ Jugadores.name }}</td>
+                    <td class="text-center">{{ Jugadores.last_name }}</td>
+                    <td class="text-center">{{ Jugadores.numero }}</td>
+                    <td class="text-center">{{ Jugadores.posicion }}</td>
+                    <td class="text-center">{{ Jugadores.Equipo }}</td>
+
+                    <td class="text-center">
+                        <a href="{% url 'home:detail_jugador' jugadores.id %}" class="btn btn-primary btn-sm">Detail</a>
+                        <a href="{% url 'home:update_jugador' jugadores.id %}" class="btn btn-warning btn-sm">Update</a>
+                        <a href="{% url 'home:delete_jugador' jugadores.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

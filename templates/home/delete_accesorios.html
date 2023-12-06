@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Delete Accesorios View {% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            ¿ Realmente deseas eliminar este accesorio: <strong>{{object}}??</strong>
+            <a href="{% url 'home:estadio' %}" class="btn btn-outline-info">Cancel</a>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
+{% endblock content %}

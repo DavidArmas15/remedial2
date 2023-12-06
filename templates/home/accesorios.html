@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Accesorios View{% endblock title %}
+
+{% block content %} 
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th class="text-center">ID</th>
+            <th class="text-center">name</th>
+            <th class="text-center">capacidad</th>
+            <th class="text-center">tamano</th>
+            <th class="text-center">Equipo</th>
+
+        </thead>
+        <tbody>
+            {% for Estadio in estadios %}
+                <tr>
+                    <td class="text-center">{{ estadios.id }}</td>
+                    <td class="text-center">{{ estadios.name }}</td>
+                    <td class="text-center">{{ estadios.capacidad }}</td>
+                    <td class="text-center">{{ estadios.tamano }}</td>
+                    <td class="text-center">{{ estadios.equipo }}</td>
+                    <td class="text-center">
+                        <a href="{% url 'home:detail_Estadio' estadios.id %}" class="btn btn-primary btn-sm">Detail</a>
+                        <a href="{% url 'home:update_Estadio' estadios.id %}" class="btn btn-warning btn-sm">Update</a>
+                        <a href="{% url 'home:delete_Estadio' estadios.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

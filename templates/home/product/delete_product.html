@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Delete Producto View {% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            ¿ Realmente deseas eliminar este Producto?: <strong>{{object}}??</strong>
+            <a href="{% url 'home:equipo' %}" class="btn btn-outline-info">Cancel</a>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
+{% endblock content %}

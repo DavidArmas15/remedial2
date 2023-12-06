@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Detail Category View{% endblock title %}
+
+{% block content %}
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{ object }}
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          This is the category created by: <strong> {{ object.user }}</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code> This category has a status:  </code> {{ object.status }}, though the transition does a timestamp.
+            <small><a href="{% url 'home:jugador' %}" class="btn btn-link">back to home</a></small> 
+        </div>
+      </div>
+    </div>
+    
+    
+    
+{% endblock content %}
